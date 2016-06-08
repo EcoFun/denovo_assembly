@@ -214,7 +214,7 @@ for k in $ks; do
                 echo "## fastqc on mergepairs already done for $sa ##"
             fi
         else
-            echo "# 1) Pass mergepairs for $sa"
+            printf "# 1) Pass mergepairs for $sa\n\n"
             echo "# 2) Pass fastqc on mergepair files for $sa"
         fi
         
