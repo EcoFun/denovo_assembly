@@ -187,9 +187,9 @@ for k in $ks; do
                 
                 # compress new files
                 echo ""
-                echo "find $dmerg -name \"*fastq\" -exec gzip {} \;"
+                echo "find $dmerg -name \"*fastq\" -exec gzip -v {} \;"
                 if [ "$DEB" = "false" ]; then
-                    time find $dmerg -name "*fastq" -exec gzip {} \;
+                    time find $dmerg -name "*fastq" -exec gzip -v {} \;
                 fi
             else # pass
                 echo "## Abyss-mergepairs already done for $sa ##"
@@ -253,12 +253,10 @@ for k in $ks; do
                 fi
 
                 # compress new files
-                echo "find $dkonn -name \"*fastq\" -exec gzip {} \;"
-                if [ "$konextd" = true ] ; then
-                    if [ "$DEB" = "false" ]; then
-                        time find $dkonn -name "*f[qa]" -exec gzip {} \;
-                    fi
-                fi
+                echo "find $dkonn -name \"*f[qa]\" -exec gzip -v {} \;"
+				if [ "$DEB" = "false" ]; then
+					time find $dkonn -name "*f[qa]" -exec gzip -v {} \;
+				fi
             else
                 echo "## konnector for $sa already done with kmer=$k ##"
             fi
